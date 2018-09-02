@@ -3,7 +3,7 @@
 If you wan´t to try out controlling CasparCG from Electron-React, this can get you started.
 
 ### A minimal CasparCG Electron NodeJS client.
-Using SuperflyTV CasparCG-Connection
+Using SuperflyTV CasparCG-Connection and Alex Devero boilerplate
 ```
 https://github.com/SuperFlyTV/casparcg-connection
 ```
@@ -18,8 +18,8 @@ Minimal Electron, React and Webpack boilerplate
 
 ### Install:
 ```
-Clone
-cd 
+Clone: https://github.com/olzzon/CasparCG-React-Electron-boilerplate.git nameofyourproject
+cd nameofyourproject
 yarn
 ```
 
