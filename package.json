@@ -1,16 +1,12 @@
 {
   "name": "CasparCGClient",
-  "version": "1.2.3",
+  "version": "0.1.0",
   "description": "Electron/React based CasparCG Client",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/alexdevero/electron-react-webpack-boilerplate.git"
-  },
-  "homepage": "olzzondk",
-  "bugs": {
-    "url": "https://github.com/alexdevero/electron-react-webpack-boilerplate.git/issues"
+    "url": "https://github.com/olzzon/CasparCG-React-Electron-boilerplate.git"
   },
   "author": {
     "name": "Kasper Olsson Hans",
