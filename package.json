@@ -1,21 +1,21 @@
 {
-  "name": "electron-react-webpack-boilerplate",
+  "name": "CasparCGClient",
   "version": "1.2.3",
-  "description": "Minimal Electron, React, PostCSS and Webpack boilerplate to help you get started with building your next app.",
+  "description": "Electron/React based CasparCG Client",
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/alexdevero/electron-react-webpack-boilerplate.git"
   },
-  "homepage": "",
+  "homepage": "olzzondk",
   "bugs": {
     "url": "https://github.com/alexdevero/electron-react-webpack-boilerplate.git/issues"
   },
   "author": {
-    "name": "Alex Devero",
-    "email": "deveroalex@gmail.com",
-    "url": "https://github.com/alexdevero"
+    "name": "Kasper Olsson Hans",
+    "email": "xxx",
+    "url": "https://github.com/olzzon"
   },
   "keywords": [
     "app",
@@ -43,6 +43,7 @@
     "postpackage": "electron-packager ./ --out=./builds"
   },
   "dependencies": {
+    "casparcg-connection": "^4.5.0",
     "electron": "^2.0.8",
     "react": "^16.4.2",
     "react-dom": "^16.4.2"

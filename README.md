@@ -1,93 +1,52 @@
-<p align="center">
-  <img src="https://cdn.rawgit.com/alexdevero/electron-react-webpack-boilerplate/master/docs/images/electron-react-webpack-boilerplate.png" width="135" align="center">
-  <br>
-  <br>
-</p>
 
-<p align="center">
-  <a href="https://david-dm.org/alexdevero/electron-react-webpack-boilerplate"><img alt="Dependency Status" src="https://david-dm.org/alexdevero/electron-react-webpack-boilerplate.svg?style=flat"></a>
-  <a href="https://david-dm.org/alexdevero/electron-react-webpack-boilerplate?type=dev"><img alt="devDependency Status" src="https://david-dm.org/alexdevero/electron-react-webpack-boilerplate/dev-status.svg?style=flat"></a>
-  <a href="http://opensource.org/licenses/MIT"><img alt="MIT License" src="https://img.shields.io/npm/l/express.svg"></a>
-</p>
+## Caspar CG boilerplate
+If you wan´t to try out controlling CasparCG from Electron-React, this can get you started.
 
-<p align="center">
-  <a href="https://alexdevero.com"><img alt="Built by DEVERO" src="https://img.shields.io/badge/built%20by-DEVERO-brightgreen.svg?colorB=d30320"></a>
-  <a href="https://github.com/alexdevero/electron-react-webpack-boilerplate/releases"><img alt="Current release" src="https://img.shields.io/github/release/alexdevero/electron-react-webpack-boilerplate.svg"></a>
-</p>
-
-## Minimal Electron, React and Webpack boilerplate
-
-Minimal Electron, React, PostCSS and Webpack boilerplate to help you get started with building your next app.
-
-### Table of contents
-
-* [Install](#install)
-* [Usage](#usage)
-* [Code of Conduct](#code-of-conduct)
-* [License](#license)
-
-### Install
-
-#### Clone this repo
-
+### A minimal CasparCG Electron NodeJS client.
+Using SuperflyTV CasparCG-Connection
 ```
-git clone https://github.com/alexdevero/electron-react-webpack-boilerplate.git
+https://github.com/SuperFlyTV/casparcg-connection
 ```
 
-#### Install dependencies
+
+### React-Electron boilerplate from:
+Minimal Electron, React and Webpack boilerplate
 
 ```
-npm install
+ https://github.com/alexdevero/electron-react-webpack-boilerplate.git
 ```
-or
+
+### Install:
 ```
+Clone
+cd 
 yarn
 ```
 
-### Usage
-
-#### Run the app
-
-```
-npm run start
-```
-or
+### Run the app
 ```
 yarn start
 ```
 
-#### Build the app (automatic)
-
-```
-npm run package
-```
-or
+### Build the app (automatic)
 ```
 yarn package
 ```
 
-#### Build the app (manual)
-
-```
-npm run build
-```
-or
+### Build the app (manual)
 ```
 yarn build
 ```
 
-#### Test the app (after `npm run build` || `yarn run build`)
-```
-npm run prod
-```
+### Test the app (`yarn run build`)
 ```
 yarn prod
 ```
 
-### Code of Conduct
+### Code of Conduct for electron-react-webpack-boilerplate:
 
 [Contributor Code of Conduct](code-of-conduct.md). By participating in this project you agree to abide by its terms.
 
-### License
+### License for electron-react-webpack-boilerplate:
 
 MIT © [Alex Devero](https://alexdevero.com).
