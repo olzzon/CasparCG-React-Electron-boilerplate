@@ -2,7 +2,7 @@ import '../assets/css/App.css';
 import React, { Component } from 'react';
 import {CasparCG} from 'casparcg-connection';
 
-  var connection = new CasparCG({host: "91.224.210.82", onConnect: (connected) => {
+  var connection = new CasparCG({host: "localhost", onConnect: (connected) => {
     // do something once we get connected
       console.log("Are we conencted?", connected);
       }
