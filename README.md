@@ -18,7 +18,7 @@ Minimal Electron, React and Webpack boilerplate
 
 ### Install:
 ```
-Clone: https://github.com/olzzon/CasparCG-React-Electron-boilerplate.git nameofyourproject
+git clone https://github.com/olzzon/CasparCG-React-Electron-boilerplate.git nameofyourproject
 cd nameofyourproject
 yarn
 ```
