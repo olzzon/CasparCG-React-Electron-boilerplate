@@ -19,7 +19,8 @@ class App extends Component {
     this.state = {
       ccgConnectionStatus: false
     };
-  }
+    this.setConnectionStatus = this.setConnectionStatus.bind(this);
+}
 
   componentDidMount() {
    
@@ -28,9 +29,13 @@ class App extends Component {
     //Send a STOP command to get a promise for Server connection status.
     this.ccgConnection.stop(1, 10)
     .then ((connected) => {
-        this.setConnectionStatus(true);
-        console.log("Send a STOP command to show connection: ", connected);
+        console.log("Send a STOP command to show connection: ", this.ccgConnection.connectionStatus);
       });
+    
+      // Initialize connection status:
+    var temp = setInterval(this.setConnectionStatus, 1000);
+    console.log("Timer initiated: " + temp);
+
   }
 
 
@@ -42,8 +47,9 @@ class App extends Component {
     this.ccgConnection.stop(channel, layer);
   }
 
-  setConnectionStatus(status) {
-      this.setState({ccgConnectionStatus: status});
+  setConnectionStatus() {
+      this.setState({ccgConnectionStatus: this.ccgConnection.connectionStatus.connected});
+      console.log("Checking connection: " + this.ccgConnection.connectionStatus.connected);
   }
 
   
