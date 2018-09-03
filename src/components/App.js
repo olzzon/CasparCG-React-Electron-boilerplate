@@ -10,7 +10,7 @@ class App extends Component {
 
     this.ccgConnection = new CasparCG(
       {
-        host: "localhost",
+        host: "91.224.210.82",
         port: 5250,  
         autoConnect: false,
     });
@@ -23,7 +23,7 @@ class App extends Component {
 }
 
   componentDidMount() {
-   
+    //Connect to CG server:
     this.ccgConnection.connect();
 
     //Send a STOP command to get a promise for Server connection status.
@@ -32,12 +32,16 @@ class App extends Component {
         console.log("Send a STOP command to show connection: ", this.ccgConnection.connectionStatus);
       });
     
-      // Initialize connection status:
+    // Initialize timer connection status:
     var temp = setInterval(this.setConnectionStatus, 1000);
     console.log("Timer initiated: " + temp);
-
   }
 
+  // Timer controlled connection status
+  setConnectionStatus() {
+      this.setState({ccgConnectionStatus: this.ccgConnection.connectionStatus.connected});
+      console.log("Checking connection: " + this.ccgConnection.connectionStatus.connected);
+  }
 
   playMedia(channel, layer, mediaSource) {
     this.ccgConnection.play(channel, layer, mediaSource);
@@ -46,15 +50,8 @@ class App extends Component {
   stopMedia(channel, layer) {
     this.ccgConnection.stop(channel, layer);
   }
-
-  setConnectionStatus() {
-      this.setState({ccgConnectionStatus: this.ccgConnection.connectionStatus.connected});
-      console.log("Checking connection: " + this.ccgConnection.connectionStatus.connected);
-  }
-
   
-  render() {
-  
+  render() {  
     return (
       <div>
         <h1>CasparCG</h1> 
