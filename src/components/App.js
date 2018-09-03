@@ -2,16 +2,13 @@ import '../assets/css/App.css';
 import React, { Component } from 'react';
 import {CasparCG} from 'casparcg-connection';
 
-  var connection = new CasparCG({host: "localhost", onConnect: (connected) => {
-    // do something once we get connected
-      console.log("Are we conencted?", connected);
-      }
-    });
 
 class App extends Component {
   constructor(props) {
     // Required step: always call the parent class' constructor
     super(props);
+
+    this.CGconnection = {};
 
     // Set the state directly. Use props if necessary.
     this.state = {
@@ -19,15 +16,24 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.CGconnection = new CasparCG(
+      {
+        host: "localhost",
+        port: 5250,
+        onConnect: (connected) => {
+          // do something once we get connected
+          console.log("Are we conencted?", connected);
+        }
+    });
   }
 
 
   playMedia(mediaSource) {
-    connection.play(1, 10, mediaSource);
+    this.CGconnection.play(1, 10, mediaSource);
   }
 
   stopMedia(mediaSource) {
-    connection.stop(1, 10, mediaSource);
+    this.CGconnection.stop(1, 10, mediaSource);
   }
 
   
