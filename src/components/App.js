@@ -8,32 +8,42 @@ class App extends Component {
     // Required step: always call the parent class' constructor
     super(props);
 
-    this.CGconnection = {};
+    this.ccgConnection = new CasparCG(
+      {
+        host: "localhost",
+        port: 5250,  
+        autoConnect: false,
+    });
 
     // Set the state directly. Use props if necessary.
     this.state = {
+      ccgConnectionStatus: false
     };
   }
 
   componentDidMount() {
-    this.CGconnection = new CasparCG(
-      {
-        host: "localhost",
-        port: 5250,
-        onConnect: (connected) => {
-          // do something once we get connected
-          console.log("Are we conencted?", connected);
-        }
-    });
+   
+    this.ccgConnection.connect();
+
+    //Send a STOP command to get a promise for Server connection status.
+    this.ccgConnection.stop(1, 10)
+    .then ((connected) => {
+        this.setConnectionStatus(true);
+        console.log("Send a STOP command to show connection: ", connected);
+      });
   }
 
 
   playMedia(channel, layer, mediaSource) {
-    this.CGconnection.play(channel, layer, mediaSource);
+    this.ccgConnection.play(channel, layer, mediaSource);
   }
 
   stopMedia(channel, layer) {
-    this.CGconnection.stop(channel, layer);
+    this.ccgConnection.stop(channel, layer);
+  }
+
+  setConnectionStatus(status) {
+      this.setState({ccgConnectionStatus: status});
   }
 
   
@@ -42,16 +52,18 @@ class App extends Component {
     return (
       <div>
         <h1>CasparCG</h1> 
-        <a>Client based on SuperflyTV CasparCG-connecton</a>
-        <br/><br/>
-
+        <p>Client based on SuperflyTV CasparCG-connecton</p>
+        <a>Connection status: </a> 
+        <a style={{color: "red"}}>{this.state.ccgConnectionStatus ? "Connected" : "not Connected"}</a>
+        <br/>
         <button className="playButton" onClick={() =>
           this.playMedia(1, 10, "GO1080P25")
           }>PLAY</button>
         <button className="playButton" onClick={() =>
           this.stopMedia(1, 10, "GO1080P25")
           }>STOP</button>
-      </div>
+  
+          </div>
     )
   }
 }
