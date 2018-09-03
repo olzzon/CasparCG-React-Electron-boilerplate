@@ -28,6 +28,9 @@ yarn
 yarn start
 ```
 
+### Edit your app
+/src/components/app.js
+
 ### Build the app (automatic)
 ```
 yarn package

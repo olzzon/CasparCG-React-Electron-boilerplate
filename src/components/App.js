@@ -10,7 +10,7 @@ class App extends Component {
 
     this.ccgConnection = new CasparCG(
       {
-        host: "91.224.210.82",
+        host: "localhost",
         port: 5250,  
         autoConnect: false,
     });
