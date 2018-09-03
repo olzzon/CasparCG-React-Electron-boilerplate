@@ -28,12 +28,12 @@ class App extends Component {
   }
 
 
-  playMedia(mediaSource) {
-    this.CGconnection.play(1, 10, mediaSource);
+  playMedia(channel, layer, mediaSource) {
+    this.CGconnection.play(channel, layer, mediaSource);
   }
 
-  stopMedia(mediaSource) {
-    this.CGconnection.stop(1, 10, mediaSource);
+  stopMedia(channel, layer) {
+    this.CGconnection.stop(channel, layer);
   }
 
   
@@ -46,10 +46,10 @@ class App extends Component {
         <br/><br/>
 
         <button className="playButton" onClick={() =>
-          this.playMedia("GO1080P25")
+          this.playMedia(1, 10, "GO1080P25")
           }>PLAY</button>
         <button className="playButton" onClick={() =>
-          this.stopMedia("GO1080P25")
+          this.stopMedia(1, 10, "GO1080P25")
           }>STOP</button>
       </div>
     )
